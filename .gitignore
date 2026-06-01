@@ -17,4 +17,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Node / Vercel / Dependencies
+node_modules/
+.env
 .env.local
+.env.*.local
+.vercel/
+dist/

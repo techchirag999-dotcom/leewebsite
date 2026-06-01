@@ -1,0 +1,9 @@
+node_modules
+.git
+.vscode
+.qodo
+.env
+.env.local
+.env.*.local
+admin
+*.md

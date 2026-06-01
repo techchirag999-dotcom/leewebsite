@@ -1,0 +1,21 @@
+{
+  "name": "lee-hydraulics-website",
+  "version": "1.0.0",
+  "description": "Lee Hydraulics & Fasteners static website with Vercel serverless APIs",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo \"Static site - no build step required\"",
+    "deploy": "vercel",
+    "deploy:prod": "vercel --prod"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.0",
+    "nodemailer": "^6.9.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "vercel": "^54.6.1"
+  }
+}
