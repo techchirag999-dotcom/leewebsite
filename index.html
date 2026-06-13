@@ -40,7 +40,7 @@
   --border2:rgba(255,255,255,0.13);
   --gutter:clamp(18px,5vw,80px);
   --max:1440px;
-  --nav:68px;
+  --nav:76px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
@@ -115,14 +115,25 @@ button,a{text-decoration:none;color:inherit;border:none;outline:none;}
   border-bottom:1px solid var(--border);transition:background .3s;}
 .nav.sc{background:rgba(7,9,11,0.98);}
 .nav-logo{display:flex;align-items:center;background:none;padding:0;cursor:pointer;}
-.nav-logo img{height:42px;max-width:240px;object-fit:contain;}
+.nav-logo img{height:52px;max-width:290px;object-fit:contain;}
 .nav-links{display:flex;gap:clamp(14px,2.5vw,34px);}
-.nav-links button{font-size:10px;font-weight:400;letter-spacing:1.8px;text-transform:uppercase;
+.nav-links button{font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;
   color:var(--silver);background:none;padding-bottom:3px;transition:color .2s;position:relative;}
 .nav-links button::after{content:"";position:absolute;bottom:0;left:0;
   width:0;height:1px;background:var(--g1);transition:width .3s;}
 .nav-links button:hover,.nav-links button.act{color:var(--white);}
 .nav-links button.act::after,.nav-links button:hover::after{width:100%;}
+.nav-menu{position:relative;display:flex;align-items:center;}
+.nav-drop{position:absolute;top:calc(100% + 18px);left:50%;transform:translate(-50%,-8px);
+  min-width:250px;background:rgba(7,9,11,.98);border:1px solid var(--border2);
+  box-shadow:0 18px 44px rgba(0,0,0,.38);padding:10px;opacity:0;pointer-events:none;
+  transition:opacity .22s,transform .22s;}
+.nav-menu:hover .nav-drop,.nav-menu:focus-within .nav-drop{opacity:1;pointer-events:auto;transform:translate(-50%,0);}
+.nav-drop button{display:block;width:100%;text-align:left;font-size:10px;letter-spacing:1.7px;
+  padding:10px 12px;color:var(--silver);border-bottom:1px solid rgba(255,255,255,.05);}
+.nav-drop button:last-child{border-bottom:none;}
+.nav-drop button::after{display:none;}
+.nav-drop button:hover{color:var(--g1);background:rgba(92,184,46,.06);}
 .nav-right{display:flex;align-items:center;gap:14px;}
 .nstock{font-size:10px;letter-spacing:1px;color:var(--silver);
   padding:5px 12px;border:1px solid var(--border);border-radius:2px;}
@@ -142,6 +153,10 @@ button,a{text-decoration:none;color:inherit;border:none;outline:none;}
 .drawer button::after{content:'';display:block;width:0;height:1px;background:var(--g1);margin:4px auto 0;transition:width .3s;}
 .drawer button:hover,.drawer button.dact{color:var(--white);}
 .drawer button.dact::after{width:40px;}
+.drawer-sub{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:-20px;max-width:680px;padding:0 20px;}
+.drawer-sub button{font-family:"DM Sans",sans-serif;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;
+  border:1px solid var(--border);padding:8px 10px;border-radius:2px;}
+.drawer-sub button::after{display:none;}
 
 /* â”€â”€â”€ PAGES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .page{display:none;animation:pgIn .45s ease;}
@@ -464,21 +479,21 @@ tr:hover td{background:var(--ink3);}
 footer{background:#060809;border-top:1px solid var(--border);
   padding:clamp(44px,6vw,80px) var(--gutter) clamp(24px,3.5vw,36px);}
 .fg{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:clamp(28px,4.5vw,60px);margin-bottom:clamp(36px,4.5vw,56px);}
-.fb img{height:32px;max-width:200px;object-fit:contain;margin-bottom:14px;}
-.fb p{font-size:12px;color:var(--silver);line-height:1.8;max-width:240px;}
+.fb img{height:40px;max-width:230px;object-fit:contain;margin-bottom:14px;}
+.fb p{font-size:14px;color:var(--silver);line-height:1.8;max-width:280px;}
 .fb-c{margin-top:18px;display:flex;flex-direction:column;gap:5px;}
-.fb-c a{font-size:12px;color:var(--g1);transition:color .2s;}
+.fb-c a{font-size:14px;color:var(--g1);transition:color .2s;}
 .fb-c a:hover{color:var(--g2);}
-.fb-c span{font-size:11px;color:rgba(135,149,165,.3);margin-top:2px;}
-.fc h5{font-size:9px;letter-spacing:3px;text-transform:uppercase;
+.fb-c span{font-size:12px;color:rgba(135,149,165,.3);margin-top:2px;}
+.fc h5{font-size:11px;letter-spacing:3px;text-transform:uppercase;
   color:rgba(135,149,165,.4);margin-bottom:14px;}
-.fc a{display:block;font-size:12px;color:var(--silver);margin-bottom:9px;transition:color .2s;}
+.fc a{display:block;font-size:14px;color:var(--silver);margin-bottom:11px;transition:color .2s;}
 .fc a:hover{color:var(--cream);}
 .f-bot{border-top:1px solid var(--border);padding-top:22px;
   display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
-.f-bot span{font-size:10px;letter-spacing:.5px;color:rgba(135,149,165,.28);}
+.f-bot span{font-size:12px;letter-spacing:.5px;color:rgba(135,149,165,.28);}
 .fbadges{display:flex;gap:7px;}
-.fbadge{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+.fbadge{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
   border:1px solid var(--border);padding:3px 9px;color:rgba(135,149,165,.3);border-radius:2px;}
 
 
@@ -931,20 +946,36 @@ body.preloading {
   <div class="nav-links">
     <button onclick="gp('home')" class="act" id="nl-home">Home</button>
     <button onclick="gp('about')" id="nl-about">About</button>
-    <button onclick="gp('segments')" id="nl-segments">Segments</button>
+    <div class="nav-menu">
+      <button onclick="gp('segments')" id="nl-segments">Sectors</button>
+      <div class="nav-drop" aria-label="Sectors submenu">
+        <button type="button" onclick="openProducts('defence')">Defence</button>
+        <button type="button" onclick="openProducts('aerospace')">Aerospace</button>
+        <button type="button" onclick="openProducts('miningOilGas')">Mining, Oil &amp; Gas</button>
+        <button type="button" onclick="openProducts('robotics')">Robotics</button>
+        <button type="button" onclick="openProducts('automobilesIndustrial')">Automobiles &amp; Industrial</button>
+      </div>
+    </div>
     <button onclick="gp('capabilities')" id="nl-capabilities">Capabilities</button>
     <button onclick="gp('contact')" id="nl-contact">Contact</button>
   </div>
   <div class="nav-right">
     <div class="nstock">ISO 9001:2008 &nbsp;<span class="up">NSIC</span></div>
-    <button class="btn btn-g" style="padding:8px 18px;font-size:9px;" onclick="gp('contact')">Get in Touch</button>
+    <button class="btn btn-g" style="padding:9px 20px;font-size:10px;" onclick="gp('contact')">Get in Touch</button>
     <button class="burg" id="burger"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <nav class="drawer" id="drawer">
   <button onclick="gp('home');cd()">Home</button>
   <button onclick="gp('about');cd()">About</button>
-  <button onclick="gp('segments');cd()">Segments</button>
+  <button onclick="gp('segments');cd()">Sectors</button>
+  <div class="drawer-sub">
+    <button type="button" onclick="openProducts('defence');cd()">Defence</button>
+    <button type="button" onclick="openProducts('aerospace');cd()">Aerospace</button>
+    <button type="button" onclick="openProducts('miningOilGas');cd()">Mining, Oil &amp; Gas</button>
+    <button type="button" onclick="openProducts('robotics');cd()">Robotics</button>
+    <button type="button" onclick="openProducts('automobilesIndustrial');cd()">Automobiles &amp; Industrial</button>
+  </div>
   <button onclick="gp('capabilities');cd()">Capabilities</button>
   <button onclick="gp('contact');cd()">Contact</button>
 </nav>
@@ -993,11 +1024,11 @@ body.preloading {
   </section>
 
   <div class="mstrip rv">
-    <div class="mp"><img data-img-key="home.segment.defence" src="https://plus.unsplash.com/premium_photo-1661901234139-d833950e05e0?w=900&q=80&fit=crop" alt="Defence-grade metal tooling and precision forging"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">01 - Segment</div><h3>Defence</h3><p>Artillery shells, cartridges, special fasteners, assemblies, and high-strength precision-grade components.</p><div class="mp-arr">Explore</div></div></div>
-    <div class="mp"><img data-img-key="home.segment.aerospace" loading="lazy" src="https://images.unsplash.com/photo-1517976487492-5750f3195933?w=900&q=80&fit=crop" alt="Aerospace launch-grade engineering"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">02 - Segment</div><h3>Aerospace</h3><p>Aluminium forgings, titanium fasteners, nickel alloy fasteners, closed-die forgings, and assemblies.</p><div class="mp-arr">Explore</div></div></div>
-    <div class="mp"><img data-img-key="home.segment.miningOilGas" loading="lazy" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=900&q=80&fit=crop" alt="Industrial oil and gas processing systems"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">03 - Segment</div><h3>Mining, Oil &amp; Gas</h3><p>DTH drill bits, hammers, pistons, front check couplers, pics, and cross bits for demanding field use.</p><div class="mp-arr">Explore</div></div></div>
-    <div class="mp"><img data-img-key="home.segment.railways" loading="lazy" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=900&q=80&fit=crop" alt="Railway monitoring and signalling components"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">04 - Segment</div><h3>Railways</h3><p>Speed sensor bodies, precision housings, and mounting fasteners for railway track monitoring and signalling systems.</p><div class="mp-arr">Explore</div></div></div>
-    <div class="mp"><img data-img-key="home.segment.automobilesIndustrial" loading="lazy" src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=900&q=80&fit=crop" alt="Automobiles and industrial machined components"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">05 - Segment</div><h3>Automobiles &amp; Industrial</h3><p>Precision forgings, hydraulic fittings, special alloy fasteners, and machined components as per customer drawing.</p><div class="mp-arr">Explore</div></div></div>
+    <div class="mp"><img data-img-key="home.segment.defence" src="https://plus.unsplash.com/premium_photo-1661901234139-d833950e05e0?w=900&q=80&fit=crop" alt="Defence-grade metal tooling and precision forging"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">01 - Sector</div><h3>Defence</h3><p>Artillery shells, cartridges, special fasteners, assemblies, and high-strength precision-grade components.</p><div class="mp-arr">Explore</div></div></div>
+    <div class="mp"><img data-img-key="home.segment.aerospace" loading="lazy" src="https://images.unsplash.com/photo-1517976487492-5750f3195933?w=900&q=80&fit=crop" alt="Aerospace launch-grade engineering"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">02 - Sector</div><h3>Aerospace</h3><p>Aluminium forgings, titanium fasteners, nickel alloy fasteners, closed-die forgings, and assemblies.</p><div class="mp-arr">Explore</div></div></div>
+    <div class="mp"><img data-img-key="home.segment.miningOilGas" loading="lazy" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=900&q=80&fit=crop" alt="Industrial oil and gas processing systems"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">03 - Sector</div><h3>Mining, Oil &amp; Gas</h3><p>DTH drill bits, hammers, pistons, front check couplers, pics, and cross bits for demanding field use.</p><div class="mp-arr">Explore</div></div></div>
+    <div class="mp"><img data-img-key="home.segment.robotics" loading="lazy" src="https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?w=900&q=80&fit=crop" alt="Robotic handling and automated manufacturing systems"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">04 - Sector</div><h3>Robotics</h3><p>Robotic handling, automated loading and unloading, and repeatable process control for precision manufacturing lines.</p><div class="mp-arr">Explore</div></div></div>
+    <div class="mp"><img data-img-key="home.segment.automobilesIndustrial" loading="lazy" src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=900&q=80&fit=crop" alt="Automobiles and industrial machined components"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">05 - Sector</div><h3>Automobiles &amp; Industrial</h3><p>Precision forgings, hydraulic fittings, special alloy fasteners, and machined components as per customer drawing.</p><div class="mp-arr">Explore</div></div></div>
   </div>
 
   <div class="ticker">
@@ -1059,7 +1090,7 @@ body.preloading {
     </div>
     <div class="cta-btns">
       <button class="btn btn-g" onclick="gp('contact')">Contact Lee Hydraulics</button>
-      <button class="btn btn-o" onclick="gp('segments')">View Segments</button>
+      <button class="btn btn-o" onclick="gp('segments')">View Sectors</button>
     </div>
   </div>
 </div>
@@ -1103,7 +1134,7 @@ body.preloading {
       <div class="timeline-grid rv">
         <div style="background:var(--ink2);padding:28px 24px;"><div style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--g1);line-height:1;margin-bottom:8px;">1985</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-bottom:10px;">Early Titanium Innovation</div><p class="p-sm">Pioneered precision engineering solutions with early titanium product development for India's emerging space programs, laying the foundation for Lee Fasteners.</p></div>
         <div style="background:var(--ink2);padding:28px 24px;"><div style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--g1);line-height:1;margin-bottom:8px;">2000</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-bottom:10px;">India's First Titanium Fastener Manufacturer for ISRO</div><p class="p-sm">Became the first Indian company to manufacture and supply titanium fasteners for ISRO, establishing a trusted presence in the aerospace and defense sector.</p></div>
-        <div style="background:var(--ink2);padding:28px 24px;"><div style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--g1);line-height:1;margin-bottom:8px;">2000+</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-bottom:10px;">Aerospace &amp; Defence Supply Record</div><p class="p-sm">Successfully supplied mission-critical titanium fasteners for multiple ISRO programs, strengthening India's indigenous aerospace manufacturing capabilities.</p></div>
+        <div style="background:var(--ink2);padding:28px 24px;"><div style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--g1);line-height:1;margin-bottom:8px;">2006</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-bottom:10px;">Aerospace &amp; Defence Supply Record</div><p class="p-sm"> Entered the defence manufacturing ecosystem through DRDL, delivering critical fastener solutions for missile systems and strengthening India's indigenous defence programs</p></div>
         <div style="background:var(--ink2);padding:28px 24px;"><div style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--g1);line-height:1;margin-bottom:8px;">2017</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-bottom:10px;">Major Capacity Expansion</div><p class="p-sm">Expanded manufacturing operations to a 100,000 sq. ft. facility, enabling higher production volumes and advanced engineering capabilities.</p></div>
         <div style="background:var(--ink2);padding:28px 24px;"><div style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--g1);line-height:1;margin-bottom:8px;">2023</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-bottom:10px;">Patented Technology Innovation</div><p class="p-sm">Achieved a breakthrough in mining-sector technology through proprietary innovation, securing patents and advancing industrial engineering solutions.</p></div>
         <div style="background:var(--ink2);padding:28px 24px;"><div style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--g1);line-height:1;margin-bottom:8px;">2025</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-bottom:10px;">Artillery Cell Manufacturing</div><p class="p-sm">Entered strategic defense manufacturing with specialized artillery cell production, supported by advanced quality systems and precision manufacturing processes.</p></div>
@@ -1149,25 +1180,25 @@ body.preloading {
     <div class="b-ov"></div>
     <div class="b-body" style="padding-top:var(--nav);"><span class="tag" style="margin-bottom:14px;">Serving Critical Industrial Sectors</span><h1 class="h-lg">Defence, aerospace<br><em>and field-proven industry.</em></h1></div>
   </div>
-  <div class="srow rv">
-    <div class="si"><img data-img-key="segments.defence" loading="lazy" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1000&q=80&fit=crop" alt="Defence products"/><div class="si-cap"><span>Defence Products - Segment 01</span></div></div>
-    <div class="st"><span class="tag" style="margin-bottom:12px;">Segment 01</span><h2 class="h-md" style="margin-bottom:14px;">Defence<br>Products</h2><div class="grule"></div><p class="p-md" style="margin-bottom:16px;">High precision forgings, artillery shells, cartridges, special fasteners, assemblies, and high-strength precision-grade components for defence-grade manufacturing requirements.</p><div class="ptags"><span class="pt">105mm Shell</span><span class="pt">120mm Shell</span><span class="pt">155mm Shell</span><span class="pt">40mm Cartridge</span><span class="pt">Special Fasteners</span></div><a class="alink" href="#" onclick="openProducts('defence')">Know More</a></div>
+  <div class="srow rv" id="sector-defence">
+    <div class="si"><img data-img-key="segments.defence" loading="lazy" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1000&q=80&fit=crop" alt="Defence products"/><div class="si-cap"><span>Defence Products - Sector 01</span></div></div>
+    <div class="st"><span class="tag" style="margin-bottom:12px;">Sector 01</span><h2 class="h-md" style="margin-bottom:14px;">Defence<br>Products</h2><div class="grule"></div><p class="p-md" style="margin-bottom:16px;">High precision forgings, artillery shells, cartridges, special fasteners, assemblies, and high-strength precision-grade components for defence-grade manufacturing requirements.</p><div class="ptags"><span class="pt">105mm Shell</span><span class="pt">120mm Shell</span><span class="pt">155mm Shell</span><span class="pt">40mm Cartridge</span><span class="pt">Special Fasteners</span></div><a class="alink" href="#" onclick="openProducts('defence')">Know More</a></div>
   </div>
-  <div class="srow fl rv">
-    <div class="si"><img data-img-key="segments.aerospace" loading="lazy" src="https://images.unsplash.com/photo-1517976487492-5750f3195933?w=1000&q=80&fit=crop" alt="Aerospace forgings and fasteners"/><div class="si-cap"><span>Aerospace Components - Segment 02</span></div></div>
-    <div class="st"><span class="tag" style="margin-bottom:12px;">Segment 02</span><h2 class="h-md" style="margin-bottom:14px;">Aerospace<br>Components</h2><div class="grule"></div><p class="p-md" style="margin-bottom:16px;">Precision products including aluminium forgings, titanium fasteners, nickel alloy fasteners, closed-die forgings, and assemblies for aerospace-grade applications.</p><div class="ptags"><span class="pt">Aluminium Forgings</span><span class="pt">Titanium Fasteners</span><span class="pt">Nickel Alloy Fasteners</span><span class="pt">Closed-Die Forgings</span><span class="pt">Assemblies</span></div><a class="alink" href="#" onclick="openProducts('aerospace')">Know More</a></div>
+  <div class="srow fl rv" id="sector-aerospace">
+    <div class="si"><img data-img-key="segments.aerospace" loading="lazy" src="https://images.unsplash.com/photo-1517976487492-5750f3195933?w=1000&q=80&fit=crop" alt="Aerospace forgings and fasteners"/><div class="si-cap"><span>Aerospace Components - Sector 02</span></div></div>
+    <div class="st"><span class="tag" style="margin-bottom:12px;">Sector 02</span><h2 class="h-md" style="margin-bottom:14px;">Aerospace<br>Components</h2><div class="grule"></div><p class="p-md" style="margin-bottom:16px;">Precision products including aluminium forgings, titanium fasteners, nickel alloy fasteners, closed-die forgings, and assemblies for aerospace-grade applications.</p><div class="ptags"><span class="pt">Aluminium Forgings</span><span class="pt">Titanium Fasteners</span><span class="pt">Nickel Alloy Fasteners</span><span class="pt">Closed-Die Forgings</span><span class="pt">Assemblies</span></div><a class="alink" href="#" onclick="openProducts('aerospace')">Know More</a></div>
   </div>
-  <div class="srow rv">
-    <div class="si"><img data-img-key="segments.miningOilGas" loading="lazy" src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=1000&q=80&fit=crop" alt="Mining oil and gas components"/><div class="si-cap"><span>Mining, Oil &amp; Gas - Segment 03</span></div></div>
-    <div class="st"><span class="tag" style="margin-bottom:12px;">Segment 03</span><h2 class="h-md" style="margin-bottom:14px;">Mining,<br>Oil &amp; Gas</h2><div class="grule"></div><p class="p-md" style="margin-bottom:16px;">Products for infrastructure, oil rigs, borewell, mining, and oil and gas applications including DTH drill bits, hammers, pistons, front check couplers, pics, and cross bits.</p><div class="ptags"><span class="pt">DTH Drill Bits</span><span class="pt">Hammers</span><span class="pt">Pistons</span><span class="pt">Front Check Couplers</span><span class="pt">Cross Bits</span></div><a class="alink" href="#" onclick="openProducts('miningOilGas')">Know More</a></div>
+  <div class="srow rv" id="sector-miningOilGas">
+    <div class="si"><img data-img-key="segments.miningOilGas" loading="lazy" src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=1000&q=80&fit=crop" alt="Mining oil and gas components"/><div class="si-cap"><span>Mining, Oil &amp; Gas - Sector 03</span></div></div>
+    <div class="st"><span class="tag" style="margin-bottom:12px;">Sector 03</span><h2 class="h-md" style="margin-bottom:14px;">Mining,<br>Oil &amp; Gas</h2><div class="grule"></div><p class="p-md" style="margin-bottom:16px;">Products for infrastructure, oil rigs, borewell, mining, and oil and gas applications including DTH drill bits, hammers, pistons, front check couplers, pics, and cross bits.</p><div class="ptags"><span class="pt">DTH Drill Bits</span><span class="pt">Hammers</span><span class="pt">Pistons</span><span class="pt">Front Check Couplers</span><span class="pt">Cross Bits</span></div><a class="alink" href="#" onclick="openProducts('miningOilGas')">Know More</a></div>
   </div>
-  <div class="srow fl rv">
-    <div class="si"><img data-img-key="segments.railways" loading="lazy" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=1000&q=80&fit=crop" alt="Railway monitoring and signalling components"/><div class="si-cap"><span>Railways - Segment 04</span></div></div>
-    <div class="st"><span class="tag" style="margin-bottom:12px;">Segment 04</span><h2 class="h-md" style="margin-bottom:14px;">Railways<br>Components</h2><div class="grule"></div><p class="p-md" style="margin-bottom:16px;">Precision components for train track monitoring and signalling systems, including speed sensor bodies, precision housings, and rail system mounting fasteners.</p><div class="ptags"><span class="pt">Speed Sensor Bodies</span><span class="pt">Track Monitoring Housings</span><span class="pt">Rail System Fasteners</span></div><a class="alink" href="#" onclick="openProducts('railways')">Know More</a></div>
+  <div class="srow fl rv" id="sector-robotics">
+    <div class="si"><img data-img-key="segments.robotics" loading="lazy" src="https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?w=1000&q=80&fit=crop" alt="Robotic handling and automated manufacturing systems"/><div class="si-cap"><span>Robotics - Sector 04</span></div></div>
+    <div class="st"><span class="tag" style="margin-bottom:12px;">Sector 04</span><h2 class="h-md" style="margin-bottom:14px;">Robotics<br>Automation</h2><div class="grule"></div><p class="p-md" style="margin-bottom:16px;">Robotic handling, automated loading and unloading, and repeatable process control for precision manufacturing lines and critical component workflows.</p><div class="ptags"><span class="pt">Robotic Handling</span><span class="pt">Automated Loading</span><span class="pt">Process Control</span></div><a class="alink" href="#" onclick="openProducts('robotics')">Know More</a></div>
   </div>
-  <div class="srow rv">
-    <div class="si"><img data-img-key="segments.automobilesIndustrial" loading="lazy" src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1000&q=80&fit=crop" alt="Automobiles and industrial machined components"/><div class="si-cap"><span>Automobiles &amp; Industrial - Segment 05</span></div></div>
-    <div class="st"><span class="tag" style="margin-bottom:12px;">Segment 05</span><h2 class="h-md" style="margin-bottom:14px;">Automobiles<br>&amp; Industrial</h2><div class="grule"></div><p class="p-md" style="margin-bottom:16px;">Precision forged and machined parts for engineering and industrial companies, from flanges, yokes, and gear blanks to hydraulic fittings and custom machined components.</p><div class="ptags"><span class="pt">Precision Forgings</span><span class="pt">Hydraulic Fittings</span><span class="pt">Special Alloy Fasteners</span><span class="pt">Machined Components</span></div><a class="alink" href="#" onclick="openProducts('automobilesIndustrial')">Know More</a></div>
+  <div class="srow rv" id="sector-automobilesIndustrial">
+    <div class="si"><img data-img-key="segments.automobilesIndustrial" loading="lazy" src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1000&q=80&fit=crop" alt="Automobiles and industrial machined components"/><div class="si-cap"><span>Automobiles &amp; Industrial - Sector 05</span></div></div>
+    <div class="st"><span class="tag" style="margin-bottom:12px;">Sector 05</span><h2 class="h-md" style="margin-bottom:14px;">Automobiles<br>&amp; Industrial</h2><div class="grule"></div><p class="p-md" style="margin-bottom:16px;">Precision forged and machined parts for engineering and industrial companies, from flanges, yokes, and gear blanks to hydraulic fittings and custom machined components.</p><div class="ptags"><span class="pt">Precision Forgings</span><span class="pt">Hydraulic Fittings</span><span class="pt">Special Alloy Fasteners</span><span class="pt">Machined Components</span></div><a class="alink" href="#" onclick="openProducts('automobilesIndustrial')">Know More</a></div>
   </div>
   <div class="cta-band rv"><div><h2 class="h-md">Need precision-grade<br><em>components?</em></h2><p class="p-lg" style="margin-top:12px;max-width:400px;">Share your requirement for forgings, fasteners, assemblies, mining tools, defence-grade components, or aerospace-grade manufacturing.</p></div><div class="cta-btns"><button class="btn btn-g" onclick="gp('contact')">Submit Requirement</button></div></div>
 </div>
@@ -1176,23 +1207,18 @@ body.preloading {
      CAPABILITIES
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <div id="pg-products" class="page">
-  <div class="banner" style="height:clamp(260px,34vw,420px);">
-    <img data-img-key="products.hero" loading="lazy" src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1800&q=80&fit=crop" alt="Lee Hydraulics and Fasteners product portfolio"/>
-    <div class="b-ov"></div>
-    <div class="b-body" style="padding-top:var(--nav);"><span class="tag" style="margin-bottom:14px;">Products</span><h1 class="h-lg">Segment-wise<br><em>product portfolio.</em></h1></div>
-  </div>
   <div class="wrap">
     <div class="prod-head rv">
       <div>
         <span class="tag" style="margin-bottom:14px;">Sectors &amp; Products</span>
         <h2 class="h-md">Precision parts for<br><em>critical industries.</em></h2>
-        <p class="p-lg" style="margin-top:14px;max-width:620px;">Explore aerospace, defence, mining, railways, and industrial product groups manufactured for demanding engineering applications.</p>
+        <p class="p-lg" style="margin-top:14px;max-width:620px;">Explore aerospace, defence, mining, robotics, and industrial product groups manufactured for demanding engineering applications.</p>
       </div>
       <div class="prod-tabs" role="tablist" aria-label="Product sectors">
         <button class="prod-tab act" type="button" onclick="showProductSector('aerospace')" data-sector-tab="aerospace">Aerospace</button>
-        <button class="prod-tab" type="button" onclick="showProductSector('defence')" data-sector-tab="defence">Defence Existing</button>
+        <button class="prod-tab" type="button" onclick="showProductSector('defence')" data-sector-tab="defence">Defence</button>
         <button class="prod-tab" type="button" onclick="showProductSector('miningOilGas')" data-sector-tab="miningOilGas">Mining, Oil &amp; Gas</button>
-        <button class="prod-tab" type="button" onclick="showProductSector('railways')" data-sector-tab="railways">Railways</button>
+        <button class="prod-tab" type="button" onclick="showProductSector('robotics')" data-sector-tab="robotics">Robotics</button>
         <button class="prod-tab" type="button" onclick="showProductSector('automobilesIndustrial')" data-sector-tab="automobilesIndustrial">Automobiles &amp; Industrial</button>
       </div>
     </div>
@@ -1219,7 +1245,7 @@ body.preloading {
         <div class="prod-customers"><h4>Key Customers</h4><p>DRDL, RCI, ANSP-B05, ASL, DMDE, BDL</p></div>
       </div>
       <div class="prod-grid">
-        <article class="prod-card"><div class="prod-img"><img data-img-key="products.defence" loading="lazy" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop" alt="Special alloy fasteners for missile systems"/></div><div class="prod-body"><div class="prod-label">Defence Existing</div><h4 class="prod-title">Special Alloy Fasteners for Missile Systems</h4><p class="prod-copy">High-reliability alloy fasteners for missile assemblies and defence-grade platforms.</p><div class="prod-chips"><span class="prod-chip">Missile Systems</span><span class="prod-chip">Alloy</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
+        <article class="prod-card"><div class="prod-img"><img data-img-key="products.defence" loading="lazy" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop" alt="Special alloy fasteners for missile systems"/></div><div class="prod-body"><div class="prod-label">Defence</div><h4 class="prod-title">Special Alloy Fasteners for Missile Systems</h4><p class="prod-copy">High-reliability alloy fasteners for missile assemblies and defence-grade platforms.</p><div class="prod-chips"><span class="prod-chip">Missile Systems</span><span class="prod-chip">Alloy</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
         <article class="prod-card"><div class="prod-img"><img data-img-key="products.defence" loading="lazy" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop" alt="Shearing bolts"/></div><div class="prod-body"><div class="prod-label">Defence Existing</div><h4 class="prod-title">Shearing Bolts</h4><p class="prod-copy">Precision shearing bolt solutions for controlled release and critical defence mechanisms.</p><div class="prod-chips"><span class="prod-chip">Bolts</span><span class="prod-chip">Critical Use</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
         <article class="prod-card"><div class="prod-img"><img data-img-key="products.defence" loading="lazy" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop" alt="Precision machined components in maraging steel and titanium"/></div><div class="prod-body"><div class="prod-label">Defence Existing</div><h4 class="prod-title">Precision Machined Components</h4><p class="prod-copy">Machined components in maraging steel and titanium for defence R&amp;D and weapons systems.</p><div class="prod-chips"><span class="prod-chip">Maraging Steel</span><span class="prod-chip">Titanium</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
         <article class="prod-card"><div class="prod-img"><img data-img-key="products.defence" loading="lazy" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop" alt="Defence canister fasteners"/></div><div class="prod-body"><div class="prod-label">Defence Existing</div><h4 class="prod-title">Canister Fasteners</h4><p class="prod-copy">Defence-grade fastening components for canister platforms and related assemblies.</p><div class="prod-chips"><span class="prod-chip">Canister</span><span class="prod-chip">Fasteners</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
@@ -1242,15 +1268,14 @@ body.preloading {
       </div>
     </section>
 
-    <section class="prod-sector rv" data-product-sector="railways">
+    <section class="prod-sector rv" data-product-sector="robotics">
       <div class="prod-sector-head">
-        <div><div class="prod-eyebrow">Railways</div><h3 class="h-md" style="margin-bottom:12px;">Track monitoring<br><em>and signalling systems.</em></h3><p class="p-lg prod-desc">Precision components for train track monitoring and signalling systems.</p></div>
-        <div class="prod-customers"><h4>Key Customers</h4><p>MEDHA Servo Drives</p></div>
+        <div><div class="prod-eyebrow">Robotics</div><h3 class="h-md" style="margin-bottom:12px;">Robotic handling<br><em>and automated production.</em></h3><p class="p-lg prod-desc">Automation systems and robotic handling workflows that support repeatable, efficient, and high-precision manufacturing operations.</p></div>
       </div>
       <div class="prod-grid">
-        <article class="prod-card"><div class="prod-img"><img data-img-key="products.railways" loading="lazy" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=700&q=80&fit=crop" alt="Speed sensor bodies for railway tracks"/></div><div class="prod-body"><div class="prod-label">Railways</div><h4 class="prod-title">Speed Sensor Bodies for Railway Tracks</h4><p class="prod-copy">Precision bodies for railway track speed sensing and monitoring applications.</p><div class="prod-chips"><span class="prod-chip">Rail Track</span><span class="prod-chip">Sensor</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
-        <article class="prod-card"><div class="prod-img"><img data-img-key="products.railways" loading="lazy" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=700&q=80&fit=crop" alt="Precision housings for track monitoring equipment"/></div><div class="prod-body"><div class="prod-label">Railways</div><h4 class="prod-title">Precision Housings for Track Monitoring Equipment</h4><p class="prod-copy">Machined housings for railway monitoring and signalling equipment assemblies.</p><div class="prod-chips"><span class="prod-chip">Housing</span><span class="prod-chip">Monitoring</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
-        <article class="prod-card"><div class="prod-img"><img data-img-key="products.railways" loading="lazy" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=700&q=80&fit=crop" alt="Mounting fasteners for rail systems"/></div><div class="prod-body"><div class="prod-label">Railways</div><h4 class="prod-title">Mounting Fasteners for Rail Systems</h4><p class="prod-copy">Fastening components for rail monitoring equipment, mounts, and system fixtures.</p><div class="prod-chips"><span class="prod-chip">Fasteners</span><span class="prod-chip">Rail Systems</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
+        <article class="prod-card"><div class="prod-img"><img data-img-key="products.robotics" loading="lazy" src="https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?w=700&q=80&fit=crop" alt="Robotic handling cells"/></div><div class="prod-body"><div class="prod-label">Robotics</div><h4 class="prod-title">Robotic Handling Cells</h4><p class="prod-copy">Robotic handling setups for repeatable movement, loading, unloading, and precision manufacturing support.</p><div class="prod-chips"><span class="prod-chip">Robotics</span><span class="prod-chip">Handling</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
+        <article class="prod-card"><div class="prod-img"><img data-img-key="products.robotics" loading="lazy" src="https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?w=700&q=80&fit=crop" alt="Automated loading and unloading systems"/></div><div class="prod-body"><div class="prod-label">Robotics</div><h4 class="prod-title">Automated Loading and Unloading</h4><p class="prod-copy">Automation support for machine tending, line movement, and safer high-throughput production workflows.</p><div class="prod-chips"><span class="prod-chip">Automation</span><span class="prod-chip">Machine Tending</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
+        <article class="prod-card"><div class="prod-img"><img data-img-key="products.robotics" loading="lazy" src="https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?w=700&q=80&fit=crop" alt="Process control automation"/></div><div class="prod-body"><div class="prod-label">Robotics</div><h4 class="prod-title">Process Control Automation</h4><p class="prod-copy">Integrated automation workflows that support quality consistency, precision control, and scalable production.</p><div class="prod-chips"><span class="prod-chip">Process Control</span><span class="prod-chip">Quality</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
       </div>
     </section>
 
@@ -1555,7 +1580,7 @@ body.preloading {
       </div>
     </div>
     <div class="fc"><h5>Company</h5><a href="#" onclick="gp('about')">About Lee</a><a href="#" onclick="gp('about')">Engineering Legacy</a><a href="#" onclick="gp('about')">Leadership</a><a href="#" onclick="gp('about')">Certifications</a></div>
-    <div class="fc"><h5>Segments</h5><a href="#" onclick="gp('segments')">Defence Products</a><a href="#" onclick="gp('segments')">Aerospace Components</a><a href="#" onclick="gp('segments')">Mining, Oil &amp; Gas</a><a href="#" onclick="gp('capabilities')">Capabilities</a></div>
+    <div class="fc"><h5>Sectors</h5><a href="#" onclick="openSector('defence')">Defence Products</a><a href="#" onclick="openSector('aerospace')">Aerospace Components</a><a href="#" onclick="openSector('miningOilGas')">Mining, Oil &amp; Gas</a><a href="#" onclick="openSector('robotics')">Robotics</a><a href="#" onclick="openSector('automobilesIndustrial')">Automobiles &amp; Industrial</a></div>
     <div class="fc"><h5>Resources</h5><a href="#" onclick="gp('capabilities')">Robotic Handling</a><a href="#" onclick="gp('capabilities')">CNC Automation</a><a href="#" onclick="gp('contact')">Submit Requirement</a><a href="#" onclick="gp('contact')">Contact Team</a></div>
   </div>
   <div class="f-bot">
@@ -1654,6 +1679,13 @@ function showProductSector(sectorKey){
 function openProducts(sectorKey){
   gp('products');
   showProductSector(sectorKey);
+}
+function openSector(sectorKey){
+  gp('segments');
+  setTimeout(()=>{
+    const row=document.getElementById('sector-'+sectorKey);
+    if(row)row.scrollIntoView({behavior:'smooth',block:'start'});
+  },80);
 }
 /* â”€â”€ BURGER â”€â”€ */
 const burg=document.getElementById('burger');
