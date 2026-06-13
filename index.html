@@ -408,6 +408,7 @@ button,a{text-decoration:none;color:inherit;border:none;outline:none;}
 .card p{font-size:12px;color:var(--silver);line-height:1.7;}
 
 /* â”€â”€â”€ AWARD CARDS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.award-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.04);}
 .award-card{background:var(--ink2);border:1px solid var(--border);
   padding:clamp(24px,3vw,40px);transition:background .3s,border-color .3s;}
 .award-card:hover{background:var(--ink3);border-color:rgba(92,184,46,.3);}
@@ -486,7 +487,7 @@ footer{background:#060809;border-top:1px solid var(--border);
 /* â”€â”€â”€ AWARDS GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .awards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:rgba(255,255,255,.04);}
 /* â”€â”€â”€ TIMELINE GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-.timeline-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.04);}
+.timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.04);}
 /* â”€â”€â”€ PROCESS GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .proc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:rgba(255,255,255,.04);}
 /* â”€â”€â”€ DOC GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
@@ -570,6 +571,8 @@ footer{background:#060809;border-top:1px solid var(--border);
   .prod-head,.prod-sector-head{grid-template-columns:1fr;}
   .prod-tabs{justify-content:flex-start;}
   .prod-grid{grid-template-columns:repeat(2,1fr);}
+  .timeline-grid{grid-template-columns:repeat(2,1fr);}
+  .award-grid{grid-template-columns:repeat(2,1fr);}
   .cert-lay{grid-template-columns:1fr;}
   .cphotos{grid-template-columns:repeat(4,1fr);grid-template-rows:1fr;height:160px;}
   .mstrip{grid-template-columns:1fr 1fr;height:clamp(260px,45vw,400px);}
@@ -591,6 +594,8 @@ footer{background:#060809;border-top:1px solid var(--border);
   .mp:last-child{grid-column:auto;height:240px;}
   .mp p,.mp-arr{opacity:1;transform:none;}
   .prod-grid{grid-template-columns:1fr;}
+  .timeline-grid{grid-template-columns:1fr;}
+  .award-grid{grid-template-columns:1fr;}
   .prod-tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;}
   .prod-tab{white-space:nowrap;}
   .pcol{grid-template-rows:240px 160px;grid-template-columns:1fr 1fr;}
@@ -1047,30 +1052,6 @@ body.preloading {
     </div>
   </div>
 
-  <div class="oem-band rv">
-    <p>Mission and organization references from company deck</p>
-    <div class="oem-ticker">
-      <div class="oem-track">
-        <!-- First Set -->
-        <span class="oem-n">ISRO</span>
-        <span class="oem-n">VSSC</span>
-        <span class="oem-n">DRDL</span>
-        <span class="oem-n">RCI</span>
-        <span class="oem-n">HAL</span>
-        <span class="oem-n">BHEL</span>
-        <span class="oem-n">BDL</span>
-        <!-- Duplicated Set for Seamless Infinite Looping -->
-        <span class="oem-n">ISRO</span>
-        <span class="oem-n">VSSC</span>
-        <span class="oem-n">DRDL</span>
-        <span class="oem-n">RCI</span>
-        <span class="oem-n">HAL</span>
-        <span class="oem-n">BHEL</span>
-        <span class="oem-n">BDL</span>
-      </div>
-    </div>
-  </div>
-
   <div class="cta-band rv">
     <div>
       <h2 class="h-md">Build with precision-grade<br><em>manufacturing capability.</em></h2>
@@ -1119,7 +1100,7 @@ body.preloading {
   <div style="background:var(--ink2);padding:clamp(48px,7vw,100px) var(--gutter);">
     <div style="max-width:var(--max);margin:0 auto;">
       <div class="rv" style="margin-bottom:48px;"><span class="tag" style="margin-bottom:14px;">Our Journey</span><h2 class="h-md">Forging capability<br><em>into the future.</em></h2></div>
-      <div style="display:grid;grid-template-columns:repeat(7,minmax(180px,1fr));gap:1px;background:rgba(255,255,255,.04);overflow-x:auto;" class="rv">
+      <div class="timeline-grid rv">
         <div style="background:var(--ink2);padding:28px 24px;"><div style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--g1);line-height:1;margin-bottom:8px;">1985</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-bottom:10px;">Early Titanium Innovation</div><p class="p-sm">Pioneered precision engineering solutions with early titanium product development for India's emerging space programs, laying the foundation for Lee Fasteners.</p></div>
         <div style="background:var(--ink2);padding:28px 24px;"><div style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--g1);line-height:1;margin-bottom:8px;">2000</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-bottom:10px;">India's First Titanium Fastener Manufacturer for ISRO</div><p class="p-sm">Became the first Indian company to manufacture and supply titanium fasteners for ISRO, establishing a trusted presence in the aerospace and defense sector.</p></div>
         <div style="background:var(--ink2);padding:28px 24px;"><div style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--g1);line-height:1;margin-bottom:8px;">2000+</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-bottom:10px;">Aerospace &amp; Defence Supply Record</div><p class="p-sm">Successfully supplied mission-critical titanium fasteners for multiple ISRO programs, strengthening India's indigenous aerospace manufacturing capabilities.</p></div>
@@ -1147,7 +1128,7 @@ body.preloading {
   <div style="background:var(--ink2);padding:clamp(48px,7vw,100px) var(--gutter);">
     <div style="max-width:var(--max);margin:0 auto;">
       <div class="rv" style="margin-bottom:clamp(32px,4vw,56px);"><span class="tag" style="margin-bottom:12px;">Certifications &amp; Recognition</span><h2 class="h-md">Built around<br><em>verified capability.</em></h2></div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:rgba(255,255,255,.04);" class="rv">
+      <div class="award-grid rv">
         <div class="award-card"><div class="aw-yr">Certification</div><div class="aw-ti">ISO 9001:2008</div><div class="aw-or">Quality management system listed in company deck.</div></div>
         <div class="award-card"><div class="aw-yr">Registration</div><div class="aw-ti">NSIC</div><div class="aw-or">Supplier and enterprise registration reference from company deck.</div></div>
         <div class="award-card"><div class="aw-yr">Approval</div><div class="aw-ti">S200 ST-01 Static Test</div><div class="aw-or">Static test reference listed in company deck.</div></div>
