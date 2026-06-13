@@ -218,7 +218,7 @@ button,a{text-decoration:none;color:inherit;border:none;outline:none;}
 
 /* â”€â”€â”€ MOOD STRIP (3 panels) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .mstrip{display:grid;grid-template-columns:repeat(5,1fr);
-  height:clamp(300px,42vw,500px);border-top:1px solid var(--border);}
+  height:clamp(210px,29vw,350px);border-top:1px solid var(--border);}
 .mp{position:relative;overflow:hidden;}
 .mp+.mp{border-left:1px solid var(--border);}
 .mp img{width:100%;height:100%;object-fit:cover;
@@ -229,7 +229,6 @@ button,a{text-decoration:none;color:inherit;border:none;outline:none;}
 .mp-body{position:absolute;bottom:0;left:0;right:0;
   padding:clamp(18px,2.5vw,32px);transform:translateY(6px);transition:transform .4s;}
 .mp:hover .mp-body{transform:translateY(0);}
-.mp-num{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--g1);margin-bottom:7px;}
 .mp h3{font-family:"Cormorant Garamond",serif;font-size:clamp(16px,2.2vw,26px);
   font-weight:300;color:var(--white);margin-bottom:7px;}
 .mp p{font-size:12px;color:var(--silver);line-height:1.6;margin-bottom:14px;
@@ -297,14 +296,11 @@ button,a{text-decoration:none;color:inherit;border:none;outline:none;}
 .prod-tab:hover,.prod-tab.act{color:var(--g1);border-color:rgba(92,184,46,.5);background:rgba(92,184,46,.07);}
 .prod-sector{display:none;}
 .prod-sector.act{display:block;}
-.prod-sector-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.42fr);
+.prod-sector-head{display:grid;grid-template-columns:minmax(0,1fr);
   gap:clamp(22px,4vw,56px);align-items:end;margin-bottom:clamp(22px,3vw,36px);
   padding-bottom:clamp(18px,2.5vw,28px);border-bottom:1px solid var(--border);}
 .prod-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--g1);margin-bottom:10px;}
 .prod-desc{max-width:640px;}
-.prod-customers{border:1px solid var(--border);background:var(--ink2);padding:18px 20px;}
-.prod-customers h4{font-size:9px;letter-spacing:2.2px;text-transform:uppercase;color:var(--g1);margin-bottom:10px;}
-.prod-customers p{font-size:12px;color:var(--silver);line-height:1.7;}
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.04);}
 .prod-card{background:var(--ink2);min-width:0;transition:background .3s,transform .3s;}
 .prod-card:hover{background:var(--ink3);transform:translateY(-2px);}
@@ -590,8 +586,8 @@ footer{background:#060809;border-top:1px solid var(--border);
   .award-grid{grid-template-columns:repeat(2,1fr);}
   .cert-lay{grid-template-columns:1fr;}
   .cphotos{grid-template-columns:repeat(4,1fr);grid-template-rows:1fr;height:160px;}
-  .mstrip{grid-template-columns:1fr 1fr;height:clamp(260px,45vw,400px);}
-  .mp:last-child{grid-column:1/3;height:190px;}
+  .mstrip{grid-template-columns:1fr 1fr;height:clamp(182px,32vw,280px);}
+  .mp:last-child{grid-column:1/3;height:133px;}
   .cg{grid-template-columns:1fr;}
   .fg{grid-template-columns:1fr 1fr;}
   .fb{grid-column:1/3;}
@@ -604,9 +600,9 @@ footer{background:#060809;border-top:1px solid var(--border);
   .hstats{grid-template-columns:1fr 1fr;padding-top:16px;margin-top:20px;}
   .hs{padding:10px 12px;}
   .mstrip{grid-template-columns:1fr;height:auto;}
-  .mp{height:240px;}
+  .mp{height:168px;}
   .mp+.mp{border-left:none;border-top:1px solid var(--border);}
-  .mp:last-child{grid-column:auto;height:240px;}
+  .mp:last-child{grid-column:auto;height:168px;}
   .mp p,.mp-arr{opacity:1;transform:none;}
   .prod-grid{grid-template-columns:1fr;}
   .timeline-grid{grid-template-columns:1fr;}
@@ -998,7 +994,7 @@ body.preloading {
         <button class="btn btn-g" onclick="gp('capabilities')">Explore Capabilities</button>
       </div>
       <div class="hero-refs rv d3">
-        <p>Mission and organization references from company deck</p>
+        <p>Trusted Partner in Manufacturing for </p>
         <div class="hero-orgs" aria-label="Mission and organization references">
           <div class="hero-org-track">
             <span class="hero-org">BDL</span>
@@ -1024,11 +1020,11 @@ body.preloading {
   </section>
 
   <div class="mstrip rv">
-    <div class="mp"><img data-img-key="home.segment.defence" src="https://plus.unsplash.com/premium_photo-1661901234139-d833950e05e0?w=900&q=80&fit=crop" alt="Defence-grade metal tooling and precision forging"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">01 - Sector</div><h3>Defence</h3><p>Artillery shells, cartridges, special fasteners, assemblies, and high-strength precision-grade components.</p><div class="mp-arr">Explore</div></div></div>
-    <div class="mp"><img data-img-key="home.segment.aerospace" loading="lazy" src="https://images.unsplash.com/photo-1517976487492-5750f3195933?w=900&q=80&fit=crop" alt="Aerospace launch-grade engineering"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">02 - Sector</div><h3>Aerospace</h3><p>Aluminium forgings, titanium fasteners, nickel alloy fasteners, closed-die forgings, and assemblies.</p><div class="mp-arr">Explore</div></div></div>
-    <div class="mp"><img data-img-key="home.segment.miningOilGas" loading="lazy" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=900&q=80&fit=crop" alt="Industrial oil and gas processing systems"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">03 - Sector</div><h3>Mining, Oil &amp; Gas</h3><p>DTH drill bits, hammers, pistons, front check couplers, pics, and cross bits for demanding field use.</p><div class="mp-arr">Explore</div></div></div>
-    <div class="mp"><img data-img-key="home.segment.robotics" loading="lazy" src="https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?w=900&q=80&fit=crop" alt="Robotic handling and automated manufacturing systems"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">04 - Sector</div><h3>Robotics</h3><p>Robotic handling, automated loading and unloading, and repeatable process control for precision manufacturing lines.</p><div class="mp-arr">Explore</div></div></div>
-    <div class="mp"><img data-img-key="home.segment.automobilesIndustrial" loading="lazy" src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=900&q=80&fit=crop" alt="Automobiles and industrial machined components"/><div class="mp-ov"></div><div class="mp-body"><div class="mp-num">05 - Sector</div><h3>Automobiles &amp; Industrial</h3><p>Precision forgings, hydraulic fittings, special alloy fasteners, and machined components as per customer drawing.</p><div class="mp-arr">Explore</div></div></div>
+    <div class="mp"><img data-img-key="home.segment.defence" src="https://plus.unsplash.com/premium_photo-1661901234139-d833950e05e0?w=900&q=80&fit=crop" alt="Defence-grade metal tooling and precision forging"/><div class="mp-ov"></div><div class="mp-body"><h3>Defence</h3><p>Artillery shells, cartridges, special fasteners, assemblies, and high-strength precision-grade components.</p><button class="mp-arr" type="button" onclick="openProducts('defence')">Explore</button></div></div>
+    <div class="mp"><img data-img-key="home.segment.aerospace" loading="lazy" src="https://images.unsplash.com/photo-1517976487492-5750f3195933?w=900&q=80&fit=crop" alt="Aerospace launch-grade engineering"/><div class="mp-ov"></div><div class="mp-body"><h3>Aerospace</h3><p>Aluminium forgings, titanium fasteners, nickel alloy fasteners, closed-die forgings, and assemblies.</p><button class="mp-arr" type="button" onclick="openProducts('aerospace')">Explore</button></div></div>
+    <div class="mp"><img data-img-key="home.segment.miningOilGas" loading="lazy" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=900&q=80&fit=crop" alt="Industrial oil and gas processing systems"/><div class="mp-ov"></div><div class="mp-body"><h3>Mining, Oil &amp; Gas</h3><p>DTH drill bits, hammers, pistons, front check couplers, pics, and cross bits for demanding field use.</p><button class="mp-arr" type="button" onclick="openProducts('miningOilGas')">Explore</button></div></div>
+    <div class="mp"><img data-img-key="home.segment.robotics" loading="lazy" src="https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?w=900&q=80&fit=crop" alt="Robotic handling and automated manufacturing systems"/><div class="mp-ov"></div><div class="mp-body"><h3>Robotics</h3><p>Robotic handling, automated loading and unloading, and repeatable process control for precision manufacturing lines.</p><button class="mp-arr" type="button" onclick="openProducts('robotics')">Explore</button></div></div>
+    <div class="mp"><img data-img-key="home.segment.automobilesIndustrial" loading="lazy" src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=900&q=80&fit=crop" alt="Automobiles and industrial machined components"/><div class="mp-ov"></div><div class="mp-body"><h3>Automobiles &amp; Industrial</h3><p>Precision forgings, hydraulic fittings, special alloy fasteners, and machined components as per customer drawing.</p><button class="mp-arr" type="button" onclick="openProducts('automobilesIndustrial')">Explore</button></div></div>
   </div>
 
   <div class="ticker">
@@ -1226,7 +1222,6 @@ body.preloading {
     <section class="prod-sector act rv" data-product-sector="aerospace">
       <div class="prod-sector-head">
         <div><div class="prod-eyebrow">Aerospace</div><h3 class="h-md" style="margin-bottom:12px;">Rockets, satellites<br><em>and propulsion systems.</em></h3><p class="p-lg prod-desc">Parts that go into rockets, satellites, and propulsion systems, manufactured for high-performance aerospace programs.</p></div>
-        <div class="prod-customers"><h4>Key Customers</h4><p>ISRO, VSSC, SAC, GTRE, BrahMos Aerospace</p></div>
       </div>
       <div class="prod-grid">
         <article class="prod-card"><div class="prod-img"><img data-img-key="products.aerospace" loading="lazy" src="https://images.unsplash.com/photo-1517976487492-5750f3195933?w=700&q=80&fit=crop" alt="Titanium alloy fasteners"/></div><div class="prod-body"><div class="prod-label">Aerospace</div><h4 class="prod-title">Titanium Alloy Fasteners</h4><p class="prod-copy">Bolts, nuts, studs, and washers for aerospace assemblies and mission hardware.</p><div class="prod-chips"><span class="prod-chip">Titanium</span><span class="prod-chip">Fasteners</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
@@ -1242,7 +1237,6 @@ body.preloading {
     <section class="prod-sector rv" data-product-sector="defence">
       <div class="prod-sector-head">
         <div><div class="prod-eyebrow">Defence - Existing</div><h3 class="h-md" style="margin-bottom:12px;">Missiles, weapons systems<br><em>and defence R&amp;D.</em></h3><p class="p-lg prod-desc">Precision parts for missiles, weapons systems, and defence R&amp;D programs, built to customer drawings and QAP requirements.</p></div>
-        <div class="prod-customers"><h4>Key Customers</h4><p>DRDL, RCI, ANSP-B05, ASL, DMDE, BDL</p></div>
       </div>
       <div class="prod-grid">
         <article class="prod-card"><div class="prod-img"><img data-img-key="products.defence" loading="lazy" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop" alt="Special alloy fasteners for missile systems"/></div><div class="prod-body"><div class="prod-label">Defence</div><h4 class="prod-title">Special Alloy Fasteners for Missile Systems</h4><p class="prod-copy">High-reliability alloy fasteners for missile assemblies and defence-grade platforms.</p><div class="prod-chips"><span class="prod-chip">Missile Systems</span><span class="prod-chip">Alloy</span></div><button class="alink" onclick="gp('contact')">Enquire</button></div></article>
@@ -1553,12 +1547,12 @@ body.preloading {
         <div style="display:flex;flex-direction:column;">
           <div class="c-info-item"><div class="c-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.83 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.74 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9a16 16 0 006.09 6.09l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.73 2.03z"/></svg></div><div><div class="c-lbl">Website</div><div class="c-val">www.leefasteners.in</div></div></div>
           <div class="c-info-item"><div class="c-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="c-lbl">Email</div><div class="c-val">info@leefasteners.in</div></div></div>
-          <div class="c-info-item"><div class="c-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="c-lbl">Location</div><div class="c-val">Factory and registered address<br/>to be updated after verification</div></div></div>
+          <div class="c-info-item"><div class="c-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="c-lbl">Location</div><div class="c-val">No 11, Bhuvanagiri Town Main Rd,<br/>Manoj Nagar, Bhuvanagiri,<br/>Telangana 508116</div></div></div>
           <div class="c-info-item"><div class="c-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><div><div class="c-lbl">Company Details</div><div class="c-val">Lee Hydraulics &amp; Fasteners (P) Ltd.<br/>Registration details to be updated</div></div></div>
         </div>
         <div class="map-wrapper">
-          <iframe id="contact-map" class="map-frame" loading="lazy" title="Lee Hydraulics location map to be updated" src="https://www.openstreetmap.org/export/embed.html?bbox=68.1%2C6.5%2C97.4%2C37.1&amp;layer=mapnik" allowfullscreen></iframe>
-          <div class="map-credit">Map data <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> - exact address to be updated</div>
+          <iframe id="contact-map" class="map-frame" loading="lazy" title="Lee Hydraulics location map, Bhuvanagiri" src="https://www.openstreetmap.org/export/embed.html?bbox=78.8750%2C17.5050%2C78.8950%2C17.5250&amp;layer=mapnik&amp;marker=17.5150%2C78.8850" allowfullscreen></iframe>
+          <div class="map-credit">Map data <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> - No 11, Bhuvanagiri Town Main Rd, Manoj Nagar</div>
         </div>
       </div>
     </div>
@@ -1576,7 +1570,7 @@ body.preloading {
       <div class="fb-c">
         <a href="https://www.leefasteners.in" target="_blank" rel="noopener noreferrer">www.leefasteners.in</a>
         <a href="mailto:info@leefasteners.in">info@leefasteners.in</a>
-        <span>Factory and registered address to be updated after verification</span>
+        <span>No 11, Bhuvanagiri Town Main Rd, Manoj Nagar, Bhuvanagiri, Telangana 508116</span>
       </div>
     </div>
     <div class="fc"><h5>Company</h5><a href="#" onclick="gp('about')">About Lee</a><a href="#" onclick="gp('about')">Engineering Legacy</a><a href="#" onclick="gp('about')">Leadership</a><a href="#" onclick="gp('about')">Certifications</a></div>
